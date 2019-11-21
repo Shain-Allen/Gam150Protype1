@@ -26,11 +26,12 @@ void DoorController::Initialize()
 void DoorController::Update(float dt)
 {
 	Timer -= dt;
-	if (Timer == 3)
+	if (AlmostEqual(Timer,3,0.1f))
 	{
 		//Display Sprite DoorCue
 		GetOwner()->GetComponent<Sprite>()->SetAlpha(1);
 	}
+	DoorOpen();
 }
 
 void DoorController::DoorOpen()

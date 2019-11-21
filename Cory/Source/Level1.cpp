@@ -16,6 +16,7 @@
 #include "stdafx.h"
 #include "Level1.h"
 #include "DoorController.h"
+#include "GameObjecs.h"
 
 //------------------------------------------------------------------------------
 
@@ -56,6 +57,8 @@ void Level1::Initialize()
 	sprite->SetAlpha(0);
 	testObject->AddComponent(sprite);
 	testObject->AddComponent(new DoorController());
+
+	//GameObject* door = Archtypes::MakeDoor();
 
 	// Add object to object manager
 	GetSpace()->GetObjectManager().AddObject(*testObject);

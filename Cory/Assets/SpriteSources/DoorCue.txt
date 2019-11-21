@@ -2,5 +2,5 @@ DoorCue
 {
   numRows : 1
   numCols : 1
-  texture : DoorCue.png
+  texture : DoorCueSprite.png
 }
