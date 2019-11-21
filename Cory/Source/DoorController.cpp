@@ -12,12 +12,14 @@
 #include "stdafx.h"
 #include "DoorController.h"
 
-
+DoorController::DoorController(float Timer, float Open, float MaskOn, float MaskReq)
+	: Component("DoorController"), Timer(Timer), Open(Open), MaskOn(MaskOn), MaskReq(MaskReq)
+{
+}
 
 void DoorController::Initialize()
 {
 }
-
 
 DoorOpen()
 {
