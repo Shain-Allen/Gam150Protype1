@@ -64,7 +64,7 @@ private:
 	//Beta::GameObject* testObject;
 	//Beta::SpriteSourcePtr spriteSource;
 
-	Beta::GameObject* HatSelectionboard;
+	//Beta::GameObject* player;
 };
 
 //----------------------------------------------------------------------------

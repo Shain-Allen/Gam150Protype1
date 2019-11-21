@@ -46,7 +46,7 @@ Beta::GameObject* Archtypes::CreateMaskDisplay()
 
 	EngineGetModule(GameObjectFactory)->SaveObjectToFile(MaskDisplay);
 
-	return ;
+	return MaskDisplay;
 }
 
 Beta::GameObject* Archtypes::MakeDoor()
