@@ -1,0 +1,6 @@
+Player
+{
+   numRows : 1
+   numCols : 4
+   texture : PlayerImages_strip4.png
+}

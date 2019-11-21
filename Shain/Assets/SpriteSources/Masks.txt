@@ -1,0 +1,6 @@
+Masks
+{
+  numRows : 1
+  numCols : 3
+  texture : Masks_strip3.png
+}	

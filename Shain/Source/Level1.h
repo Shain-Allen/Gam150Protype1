@@ -61,8 +61,8 @@ private:
 	// Private Variables:
 	//------------------------------------------------------------------------------
 
-	Beta::GameObject* testObject;
-	Beta::SpriteSourcePtr spriteSource;
+	//Beta::GameObject* testObject;
+	//Beta::SpriteSourcePtr spriteSource;
 };
 
 //----------------------------------------------------------------------------
