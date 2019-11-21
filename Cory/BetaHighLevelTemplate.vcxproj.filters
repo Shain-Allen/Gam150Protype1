@@ -25,6 +25,9 @@
     <ClCompile Include="Source\DoorController.cpp">
       <Filter>Game\Components</Filter>
     </ClCompile>
+    <ClCompile Include="Source\GameObjecs.cpp">
+      <Filter>Game\Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\stdafx.h">
@@ -34,6 +37,9 @@
       <Filter>Game\Levels</Filter>
     </ClInclude>
     <ClInclude Include="Source\DoorController.h">
+      <Filter>Game\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameObjecs.h">
       <Filter>Game\Components</Filter>
     </ClInclude>
   </ItemGroup>

@@ -12,6 +12,8 @@
 #include "stdafx.h"
 #include "DoorController.h"
 
+using namespace Beta;
+
 DoorController::DoorController(float Timer, float Open, float MaskOn, float MaskReq)
 	: Component("DoorController"), Timer(Timer), Open(Open), MaskOn(MaskOn), MaskReq(MaskReq)
 {
@@ -21,11 +23,24 @@ void DoorController::Initialize()
 {
 }
 
-DoorOpen()
+void DoorController::Update(float dt)
+{
+	Timer -= dt;
+	if (AlmostEqual(Timer,3,0.1f))
+	{
+		//Display Sprite DoorCue
+		GetOwner()->GetComponent<Sprite>()->SetAlpha(1);
+	}
+	DoorOpen();
+}
+
+void DoorController::DoorOpen()
 {
 	if (Timer <= 0)
 	{
-		Timer = 30;
+		//Undisplay Sprite DoorCue
+		GetOwner()->GetComponent<Sprite>()->SetAlpha(0);
+		Timer = 10;
 		Open = 1;
 		if (MaskOn != MaskReq)
 		{
@@ -34,7 +49,9 @@ DoorOpen()
 	}
 }
 
-GameOver()
+void DoorController::GameOver()
 {
 	GetSpace()->RestartLevel();
 }
+
+COMPONENT_SUBCLASS_DEFINITION(DoorController);
