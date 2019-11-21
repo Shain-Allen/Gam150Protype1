@@ -1,9 +1,9 @@
 //------------------------------------------------------------------------------
 //
-// File Name:	Level1.h
-// Author(s):	Jeremy Kings (j.kings)
-// Project:		BetaFramework
-// Course:		WANIC VGP2 2018-2019
+// File Name: GameObjecs.h
+// Author(s): Shain Allen
+// Project: BetaHighLevelTemplate
+// Course: wanic GP2
 //
 // Copyright © 2018 DigiPen (USA) Corporation.
 //
@@ -15,56 +15,41 @@
 // Include Files:
 //------------------------------------------------------------------------------
 
-#include "Level.h"
-
 //------------------------------------------------------------------------------
 
 //------------------------------------------------------------------------------
 // Forward Declarations:
 //------------------------------------------------------------------------------
+
 namespace Beta
 {
 	class GameObject;
-	class SpriteSource;
 }
 
 //------------------------------------------------------------------------------
 // Public Structures:
 //------------------------------------------------------------------------------
 
-class Level1 : public Beta::Level
+namespace Archtypes
 {
-public:
 	//------------------------------------------------------------------------------
 	// Public Functions:
 	//------------------------------------------------------------------------------
 
-	// Creates an instance of Level 1.
-	Level1();
+	//A gameobject that uses the player texture
+		//returns a pointer to the newly constructed player object
+	Beta::GameObject* CreatePlayer();
 
-	// Load assets associated with Level 1.
-	void Load() override;
 
-	// Initialize the memory associated with Level 1.
-	void Initialize() override;
+	//a gameobject that uses the mask strip texture
+		//returns a pointer to the new mask display object
+	Beta::GameObject* CreateMaskDisplay();
 
-	// Update Level 1.
-	// Params:
-	//	 dt = Change in time (in seconds) since the last game loop.
-	void Update(float dt) override;
+	//A gameobject that uses the door texture
+		//Return a pointer to the new mask display object
+	Beta::GameObject* MakeDoor();
 
-	// Shutdown any memory associated with Level 1.
-	void Shutdown() override;
-
-private:
-	//------------------------------------------------------------------------------
-	// Private Variables:
-	//------------------------------------------------------------------------------
-
-	//Beta::GameObject* testObject;
-	//Beta::SpriteSourcePtr spriteSource;
-
-	Beta::GameObject* HatSelectionboard;
-};
-
-//----------------------------------------------------------------------------
+	//a archetype that uses the monsters texture
+		//Returns a pointer to the new mask displayobject
+	Beta::Archetype CreateMonster();
+}
