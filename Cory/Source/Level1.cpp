@@ -15,6 +15,7 @@
 
 #include "stdafx.h"
 #include "Level1.h"
+#include "DoorController.h"
 
 //------------------------------------------------------------------------------
 
@@ -32,7 +33,7 @@ Level1::Level1()
 
 void Level1::Load()
 {
-	spriteSource = ResourceGetSpriteSource("Circle");
+	spriteSource = ResourceGetSpriteSource("DoorCue");
 }
 
 // Initialize the memory associated with the Level1 game state.
@@ -52,8 +53,9 @@ void Level1::Initialize()
 	// Create a sprite component and set its mesh and sprite source
 	Sprite* sprite = new Sprite();
 	sprite->SetSpriteSource(spriteSource);
-	sprite->SetColor(Colors::Green);
+	sprite->SetAlpha(0);
 	testObject->AddComponent(sprite);
+	testObject->AddComponent(new DoorController());
 
 	// Add object to object manager
 	GetSpace()->GetObjectManager().AddObject(*testObject);
