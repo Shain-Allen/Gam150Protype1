@@ -49,6 +49,14 @@ namespace OBJECTS
 		//Return a pointer to the new mask display object
 	Beta::GameObject* MakeDoor();
 
+	//a game object that uses the door cue texture
+		//Returns a pointer to the new door cue object
+	Beta::GameObject* CreateDoorCue();
+
+	//a game object that uses the numbers texture
+		//Returns a pointer to the new Numbers object
+	Beta::GameObject* CreateNumbers();
+
 	//a archetype that uses the monsters texture
 		//Returns a pointer to the new mask displayobject
 	Beta::Archetype CreateMonster();

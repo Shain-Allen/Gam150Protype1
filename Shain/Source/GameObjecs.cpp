@@ -67,6 +67,38 @@ Beta::GameObject* OBJECTS::MakeDoor()
 	return door;
 }
 
+Beta::GameObject* OBJECTS::CreateDoorCue()
+{
+	GameObject* doorCue = new GameObject("DoorCue");
+
+	Transform* transform = new Transform(0.5f, 0.5f);
+	transform->SetRotation(0.0f);
+	transform->SetScale(Vector2D(0.5f, 0.0f));
+	doorCue->AddComponent(transform);
+
+	Sprite* sprite = new Sprite;
+	sprite->SetSpriteSource(ResourceGetSpriteSource("DoorCue"));
+	doorCue->AddComponent(sprite);
+
+	return doorCue;
+}
+
+Beta::GameObject* OBJECTS::CreateNumbers()
+{
+	GameObject* numbers = new GameObject("Numbers");
+
+	Transform* transform = new Transform(0.5f, 0.5f);
+	transform->SetRotation(0.0f);
+	transform->SetScale(Vector2D(0.5f, 0.0f));
+	numbers->AddComponent(transform);
+
+	Sprite* sprite = new Sprite;
+	sprite->SetSpriteSource(ResourceGetSpriteSource("Numbers"));
+	numbers->AddComponent(sprite);
+
+	return numbers;
+}
+
 Beta::Archetype OBJECTS::CreateMonster()
 {
 	GameObject* Monster = new GameObject("Monster");
