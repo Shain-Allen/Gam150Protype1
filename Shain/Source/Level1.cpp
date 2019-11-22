@@ -15,7 +15,7 @@
 
 #include "stdafx.h"
 #include "Level1.h"
-#include "GameObjecs.h"
+#include "GameObjectsMaker.h"
 
 //------------------------------------------------------------------------------
 
@@ -29,7 +29,7 @@ using std::endl;
 
 // Creates an instance of Level 1.
 Level1::Level1()
-	: Level("Level 1"), maskDisplay(nullptr)
+	: Level("Level 1"), player(nullptr), maskDisplay(nullptr), door(nullptr), number1(nullptr), number2(nullptr), number3(nullptr), enemy(nullptr), doorCue(nullptr)
 {
 }
 
@@ -41,8 +41,6 @@ void Level1::Load()
 	GraphicsEngine& graphics = *EngineGetModule(GraphicsEngine);
 
 	graphics.SetBackgroundColor(Colors::Black);
-
-	maskDisplay = OBJECTS::CreateMaskDisplay();
 }
 
 // Initialize the memory associated with the Level1 game state.
@@ -50,7 +48,25 @@ void Level1::Initialize()
 {
 	std::cout << "Level1: Initialize" << std::endl;
 
+	player = Objects::CreatePlayer();
+	maskDisplay = Objects::CreateMaskDisplay();
+	door = Objects::CreateDoor();
+	number1 = Objects::CreateNumbers();
+	number1->GetComponent<Transform>()->SetTranslation(Vector2D(-1.3f, 0.6f));
+	number2 = Objects::CreateNumbers();
+	number2->GetComponent<Transform>()->SetTranslation(Vector2D(-1.03f, 0.6f));
+	number2->GetComponent<Sprite>()->SetFrame(1);
+	number3 = Objects::CreateNumbers();
+	number3->GetComponent<Transform>()->SetTranslation(Vector2D(-0.75f, 0.6f));
+	number3->GetComponent<Sprite>()->SetFrame(2);
+
+
+	GetSpace()->GetObjectManager().AddObject(*player);
 	GetSpace()->GetObjectManager().AddObject(*maskDisplay);
+	GetSpace()->GetObjectManager().AddObject(*door);
+	GetSpace()->GetObjectManager().AddObject(*number1);
+	GetSpace()->GetObjectManager().AddObject(*number2);
+	GetSpace()->GetObjectManager().AddObject(*number3);
 }
 
 // Update the Level1 game state.

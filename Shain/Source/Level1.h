@@ -64,9 +64,14 @@ private:
 	//Beta::GameObject* testObject;
 	//Beta::SpriteSourcePtr spriteSource;
 
-	//Beta::GameObject* player;
-
+	Beta::GameObject* player;
 	Beta::GameObject* maskDisplay;
+	Beta::GameObject* door;
+	Beta::GameObject* number1;
+	Beta::GameObject* number2;
+	Beta::GameObject* number3;
+	Beta::GameObject* enemy;
+	Beta::GameObject* doorCue;
 };
 
 //----------------------------------------------------------------------------

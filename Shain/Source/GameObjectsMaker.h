@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 //
-// File Name: GameObjecs.h
+// File Name: GameObjectsMaker.h
 // Author(s): Shain Allen
 // Project: BetaHighLevelTemplate
 // Course: wanic GP2
@@ -8,7 +8,6 @@
 // Copyright © 2018 DigiPen (USA) Corporation.
 //
 //------------------------------------------------------------------------------
-
 #pragma once
 
 //------------------------------------------------------------------------------
@@ -30,7 +29,7 @@ namespace Beta
 // Public Structures:
 //------------------------------------------------------------------------------
 
-namespace OBJECTS
+namespace Objects
 {
 	//------------------------------------------------------------------------------
 	// Public Functions:
@@ -47,7 +46,7 @@ namespace OBJECTS
 
 	//A gameobject that uses the door texture
 		//Return a pointer to the new mask display object
-	Beta::GameObject* MakeDoor();
+	Beta::GameObject* CreateDoor();
 
 	//a game object that uses the door cue texture
 		//Returns a pointer to the new door cue object
