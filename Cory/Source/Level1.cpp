@@ -21,6 +21,7 @@
 //------------------------------------------------------------------------------
 
 using namespace Beta;
+using namespace OBJECTS;
 
 //------------------------------------------------------------------------------
 // Public Functions:
@@ -36,6 +37,8 @@ void Level1::Load()
 {
 	doorCueSprite = ResourceGetSpriteSource("DoorCue");
 	playerSprite = ResourceGetSpriteSource("Player");
+	Archetype monster = CreateMonster();
+	GameObject::GetArchetypeManager().Add("Monster",monster);
 }
 
 // Initialize the memory associated with the Level1 game state.
@@ -43,7 +46,19 @@ void Level1::Initialize()
 {
 	std::cout << "Level1: Initialize" << std::endl;
 
+	GetSpace()->GetObjectManager().AddObject(*CreatePlayer());
+
+	GameObject* door = MakeDoor();
+
+	GetSpace()->GetObjectManager().AddObject(*door);
+
+	GameObject* monster = new GameObject(ResourceGetArchetype("Monster"));
+
+	GetSpace()->GetObjectManager().AddObject(*monster));
+
+	monster->GetComponent<Sprite>()->SetFrame(door->GetComponent<DoorController>()->MaskReq);
 	// Create a new game object
+	/*
 	testObject = new GameObject("TestObject");
 
 	// Create a transform component at 0,0 with scale 300,300
@@ -83,6 +98,7 @@ void Level1::Initialize()
 
 	// Add object to object manager
 	GetSpace()->GetObjectManager().AddObject(*testObject);
+	*/
 }
 
 // Update the Level1 game state.
@@ -95,8 +111,8 @@ void Level1::Update(float dt)
 	Input* input = EngineGetModule(Input);
 
 	// If the user presses the '1' key, restart the current level
-	if (input->CheckTriggered('1'))
-		GetSpace()->RestartLevel();
+	//if (input->CheckTriggered('1'))
+		//GetSpace()->RestartLevel();
 
 	// If the user presses the 'D' key, delete the object
 	if (testObject != nullptr && input->CheckTriggered('D'))

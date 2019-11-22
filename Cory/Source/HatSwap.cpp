@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "HatSwap.h"
+#include "GameObjecs.h"
 
 using namespace Beta;
 
@@ -23,5 +24,7 @@ void HatSwap::Update(float dt)
 	if (input->CheckTriggered('3'))
 		MaskOn = 3;
 	//Change Player Subimage to Mask On
-
+	GetOwner()->GetComponent<Sprite>()->SetFrame(MaskOn);
 }
+
+COMPONENT_SUBCLASS_DEFINITION(HatSwap);

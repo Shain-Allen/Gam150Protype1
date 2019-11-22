@@ -11,12 +11,14 @@
 
 #include "stdafx.h"
 #include "DoorController.h"
+#include "HatSwap.h"
 
 using namespace Beta;
 
 DoorController::DoorController(float Timer, float Open, float MaskReq)
 	: Component("DoorController"), Timer(Timer), Open(Open), MaskReq(MaskReq)
 {
+	Random::Range(1, 3);
 }
 
 void DoorController::Initialize()
@@ -40,9 +42,9 @@ void DoorController::DoorOpen()
 	{
 		//Undisplay Sprite DoorCue
 		GetOwner()->GetComponent<Sprite>()->SetAlpha(0);
-		Timer = 10;
+		Timer = 3;
 		Open = 1;
-		if (MaskOn != MaskReq)
+		if (GetSpace()->GetObjectManager().GetObjectByName("Player")->GetComponent<HatSwap>()->MaskOn != MaskReq)
 		{
 			GameOver();
 		}

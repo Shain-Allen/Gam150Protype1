@@ -12,6 +12,11 @@
 
 #include "Component.h"
 
+namespace Beta 
+{
+	class GameObject;
+}
+
 class HatSwap : public Beta::Component
 {
 public:
@@ -21,10 +26,11 @@ public:
 
 	void Update(float dt) override;
 
+	float MaskOn;
 
 private:
 
-	float MaskOn;
-
+	Beta::GameObject* player;
+	
 	COMPONENT_SUBCLASS_DECLARATION(HatSwap);
 };

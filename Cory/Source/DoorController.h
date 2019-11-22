@@ -16,7 +16,7 @@
 class DoorController : public Beta::Component
 {
 public:
-	DoorController(float Timer = 10, float Open = 0, float MaskReq = 1);
+	DoorController(float Timer = 3, float Open = 0, float MaskReq = 1);
 
 	void Initialize() override;
 
@@ -26,12 +26,12 @@ public:
 
 	void GameOver();
 
+	float MaskReq;
+
 private:
 
 	float Timer;
 	float Open;
-	float MaskOn;
-	float MaskReq;
 
 	COMPONENT_SUBCLASS_DECLARATION(DoorController);
 };
