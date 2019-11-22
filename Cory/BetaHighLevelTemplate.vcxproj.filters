@@ -28,6 +28,9 @@
     <ClCompile Include="Source\GameObjecs.cpp">
       <Filter>Game\Components</Filter>
     </ClCompile>
+    <ClCompile Include="Source\HatSwap.cpp">
+      <Filter>Game\Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\stdafx.h">
@@ -40,6 +43,9 @@
       <Filter>Game\Components</Filter>
     </ClInclude>
     <ClInclude Include="Source\GameObjecs.h">
+      <Filter>Game\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\HatSwap.h">
       <Filter>Game\Components</Filter>
     </ClInclude>
   </ItemGroup>
