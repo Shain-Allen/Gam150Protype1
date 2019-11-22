@@ -13,7 +13,7 @@
 
 using namespace Beta;
 
-Beta::GameObject* Archtypes::CreatePlayer()
+Beta::GameObject* OBJECTS::CreatePlayer()
 {
 	GameObject* player = new GameObject("Player");
 
@@ -31,25 +31,25 @@ Beta::GameObject* Archtypes::CreatePlayer()
 	return player;
 }
 
-Beta::GameObject* Archtypes::CreateMaskDisplay()
+Beta::GameObject* OBJECTS::CreateMaskDisplay()
 {
-	GameObject* MaskDisplay = new GameObject("Player");
+	GameObject* MaskDisplay = new GameObject("MaskDisplay");
 
 	Transform* transfrom = new Transform(0.0f, 0.0f);
 	transfrom->SetRotation(0.0f);
-	transfrom->SetScale(Vector2D(0.5f, 0.5f));
+	transfrom->SetScale(Vector2D(0.8f, 0.5f));
 	MaskDisplay->AddComponent(transfrom);
 
 	Sprite* sprite = new Sprite;
 	sprite->SetSpriteSource(ResourceGetSpriteSource("Masks"));
 	MaskDisplay->AddComponent(sprite);
 
-	EngineGetModule(GameObjectFactory)->SaveObjectToFile(MaskDisplay);
+	EngineGetModule(GameObjectFactory)->SaveObjectToFile(MaskDisplay);	
 
 	return MaskDisplay;
 }
 
-Beta::GameObject* Archtypes::MakeDoor()
+Beta::GameObject* OBJECTS::MakeDoor()
 {
 	GameObject* door = new GameObject("Door");
 
@@ -67,7 +67,7 @@ Beta::GameObject* Archtypes::MakeDoor()
 	return door;
 }
 
-Beta::Archetype Archtypes::CreateMonster()
+Beta::Archetype OBJECTS::CreateMonster()
 {
 	GameObject* Monster = new GameObject("Monster");
 

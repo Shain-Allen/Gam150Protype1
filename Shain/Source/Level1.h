@@ -65,6 +65,8 @@ private:
 	//Beta::SpriteSourcePtr spriteSource;
 
 	//Beta::GameObject* player;
+
+	Beta::GameObject* maskDisplay;
 };
 
 //----------------------------------------------------------------------------

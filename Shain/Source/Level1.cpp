@@ -20,6 +20,8 @@
 //------------------------------------------------------------------------------
 
 using namespace Beta;
+using std::cout;
+using std::endl;
 
 //------------------------------------------------------------------------------
 // Public Functions:
@@ -27,19 +29,28 @@ using namespace Beta;
 
 // Creates an instance of Level 1.
 Level1::Level1()
-	: Level("Level 1")
+	: Level("Level 1"), maskDisplay(nullptr)
 {
 }
 
 void Level1::Load()
 {
+	cout << "level 1::load" << endl;
 
+	//get graphics engine
+	GraphicsEngine& graphics = *EngineGetModule(GraphicsEngine);
+
+	graphics.SetBackgroundColor(Colors::Black);
+
+	maskDisplay = OBJECTS::CreateMaskDisplay();
 }
 
 // Initialize the memory associated with the Level1 game state.
 void Level1::Initialize()
 {
 	std::cout << "Level1: Initialize" << std::endl;
+
+	GetSpace()->GetObjectManager().AddObject(*maskDisplay);
 }
 
 // Update the Level1 game state.
