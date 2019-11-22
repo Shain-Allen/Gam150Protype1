@@ -1,0 +1,6 @@
+Numbers
+{
+	numRows : 1
+	numCols : 3
+	texture : NumbersImages_strip3.png
+}
