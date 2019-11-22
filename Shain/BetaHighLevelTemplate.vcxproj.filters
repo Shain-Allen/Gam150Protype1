@@ -22,7 +22,7 @@
     <ClCompile Include="Source\Level1.cpp">
       <Filter>Game\Levels</Filter>
     </ClCompile>
-    <ClCompile Include="Source\GameObjecs.cpp">
+    <ClCompile Include="Source\GameObjectsMaker.cpp">
       <Filter>Game\Components</Filter>
     </ClCompile>
   </ItemGroup>
@@ -33,7 +33,7 @@
     <ClInclude Include="Source\Level1.h">
       <Filter>Game\Levels</Filter>
     </ClInclude>
-    <ClInclude Include="Source\GameObjecs.h">
+    <ClInclude Include="Source\GameObjectsMaker.h">
       <Filter>Game\Components</Filter>
     </ClInclude>
   </ItemGroup>

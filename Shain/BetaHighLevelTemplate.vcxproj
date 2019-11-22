@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\GameObjecs.cpp" />
+    <ClCompile Include="Source\GameObjectsMaker.cpp" />
     <ClCompile Include="Source\Level1.cpp" />
     <ClCompile Include="Source\Main.cpp" />
     <ClCompile Include="Source\stdafx.cpp">
@@ -20,7 +20,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\GameObjecs.h" />
+    <ClInclude Include="Source\GameObjectsMaker.h" />
     <ClInclude Include="Source\Level1.h" />
     <ClInclude Include="Source\stdafx.h" />
   </ItemGroup>

@@ -1,15 +1,15 @@
-MaskDisplay
+Door
 {
 	numComponents : 2
 	Transform
 	{
-		translation : { -1, 1 }
+		translation : { 0, 0 }
 		rotation : 0
-		scale : { 0.8, 0.5 }
+		scale : { 0.2, 1 }
 	}
 	Sprite
 	{
-		spriteSource : Masks
+		spriteSource : Door
 		color : { 1 , 1 , 1 , 1 }
 		zDepth : 0
 	}

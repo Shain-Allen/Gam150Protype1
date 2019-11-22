@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 //
-// File Name: GameObjecs.cpp
+// File Name: GameObjectsMaker.cpp
 // Author(s): Shain Allen
 // Project: BetaHighLevelTemplate
 // Course: wanic GP2
@@ -9,17 +9,17 @@
 //
 //------------------------------------------------------------------------------
 #include "stdafx.h"
-#include "GameObjecs.h"
+#include "GameObjectsMaker.h"
 
 using namespace Beta;
 
-Beta::GameObject* OBJECTS::CreatePlayer()
+Beta::GameObject* Objects::CreatePlayer()
 {
 	GameObject* player = new GameObject("Player");
 
-	Transform* transfrom = new Transform(0.0f, 0.0f);
+	Transform* transfrom = new Transform(-1.0f, 0.0f);
 	transfrom->SetRotation(0.0f);
-	transfrom->SetScale(Vector2D(0.5f, 0.5f));
+	transfrom->SetScale(Vector2D(0.5f, 0.8f));
 	player->AddComponent(transfrom);
 
 	Sprite* sprite = new Sprite;
@@ -31,11 +31,11 @@ Beta::GameObject* OBJECTS::CreatePlayer()
 	return player;
 }
 
-Beta::GameObject* OBJECTS::CreateMaskDisplay()
+Beta::GameObject* Objects::CreateMaskDisplay()
 {
 	GameObject* MaskDisplay = new GameObject("MaskDisplay");
 
-	Transform* transfrom = new Transform(0.0f, 0.0f);
+	Transform* transfrom = new Transform(-1.0f, 1.0f);
 	transfrom->SetRotation(0.0f);
 	transfrom->SetScale(Vector2D(0.8f, 0.5f));
 	MaskDisplay->AddComponent(transfrom);
@@ -49,13 +49,13 @@ Beta::GameObject* OBJECTS::CreateMaskDisplay()
 	return MaskDisplay;
 }
 
-Beta::GameObject* OBJECTS::MakeDoor()
+Beta::GameObject* Objects::CreateDoor()
 {
 	GameObject* door = new GameObject("Door");
 
 	Transform* transform = new Transform(0.0f, 0.0f);
 	transform->SetRotation(0.0f);
-	transform->SetScale(Vector2D(0.5, 0.5));
+	transform->SetScale(Vector2D(0.2f, 1.0f));
 	door->AddComponent(transform);
 
 	Sprite* sprite = new Sprite;
@@ -67,39 +67,43 @@ Beta::GameObject* OBJECTS::MakeDoor()
 	return door;
 }
 
-Beta::GameObject* OBJECTS::CreateDoorCue()
+Beta::GameObject* Objects::CreateDoorCue()
 {
 	GameObject* doorCue = new GameObject("DoorCue");
 
 	Transform* transform = new Transform(0.5f, 0.5f);
 	transform->SetRotation(0.0f);
-	transform->SetScale(Vector2D(0.5f, 0.0f));
+	transform->SetScale(Vector2D(0.5f, 0.5f));
 	doorCue->AddComponent(transform);
 
 	Sprite* sprite = new Sprite;
 	sprite->SetSpriteSource(ResourceGetSpriteSource("DoorCue"));
 	doorCue->AddComponent(sprite);
 
+	EngineGetModule(GameObjectFactory)->SaveObjectToFile(doorCue);
+
 	return doorCue;
 }
 
-Beta::GameObject* OBJECTS::CreateNumbers()
+Beta::GameObject* Objects::CreateNumbers()
 {
 	GameObject* numbers = new GameObject("Numbers");
 
 	Transform* transform = new Transform(0.5f, 0.5f);
 	transform->SetRotation(0.0f);
-	transform->SetScale(Vector2D(0.5f, 0.0f));
+	transform->SetScale(Vector2D(0.15f, 0.15f));
 	numbers->AddComponent(transform);
 
 	Sprite* sprite = new Sprite;
 	sprite->SetSpriteSource(ResourceGetSpriteSource("Numbers"));
 	numbers->AddComponent(sprite);
 
+	EngineGetModule(GameObjectFactory)->SaveObjectToFile(numbers);
+
 	return numbers;
 }
 
-Beta::Archetype OBJECTS::CreateMonster()
+Beta::Archetype Objects::CreateMonster()
 {
 	GameObject* Monster = new GameObject("Monster");
 
