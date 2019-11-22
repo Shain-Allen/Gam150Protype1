@@ -14,8 +14,8 @@
 
 using namespace Beta;
 
-DoorController::DoorController(float Timer, float Open, float MaskOn, float MaskReq)
-	: Component("DoorController"), Timer(Timer), Open(Open), MaskOn(MaskOn), MaskReq(MaskReq)
+DoorController::DoorController(float Timer, float Open, float MaskReq)
+	: Component("DoorController"), Timer(Timer), Open(Open), MaskReq(MaskReq)
 {
 }
 

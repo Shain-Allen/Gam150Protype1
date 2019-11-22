@@ -34,7 +34,8 @@ Level1::Level1()
 
 void Level1::Load()
 {
-	spriteSource = ResourceGetSpriteSource("DoorCue");
+	doorCueSprite = ResourceGetSpriteSource("DoorCue");
+	playerSprite = ResourceGetSpriteSource("Player");
 }
 
 // Initialize the memory associated with the Level1 game state.
@@ -48,12 +49,32 @@ void Level1::Initialize()
 	// Create a transform component at 0,0 with scale 300,300
 	Transform* transform = new Transform(0.0f, 0.0f);
 	transform->SetRotation(0.0f);
-	transform->SetScale(Vector2D(2.0f, 2.0f));
+	transform->SetScale(Vector2D(1.0f, 0.5f));
 	testObject->AddComponent(transform);
 
 	// Create a sprite component and set its mesh and sprite source
 	Sprite* sprite = new Sprite();
-	sprite->SetSpriteSource(spriteSource);
+	sprite->SetSpriteSource(doorCueSprite);
+	sprite->SetAlpha(0);
+	testObject->AddComponent(sprite);
+	testObject->AddComponent(new DoorController());
+
+	//GameObject* door = Archtypes::MakeDoor();
+
+	// Add object to object manager
+	GetSpace()->GetObjectManager().AddObject(*testObject);
+	//
+	testObject = new GameObject("TestObject");
+
+	// Create a transform component at 0,0 with scale 300,300
+	transform = new Transform(0.0f, 0.0f);
+	transform->SetRotation(0.0f);
+	transform->SetScale(Vector2D(1.0f, 0.5f));
+	testObject->AddComponent(transform);
+
+	// Create a sprite component and set its mesh and sprite source
+	sprite = new Sprite();
+	sprite->SetSpriteSource(playerSprite);
 	sprite->SetAlpha(0);
 	testObject->AddComponent(sprite);
 	testObject->AddComponent(new DoorController());

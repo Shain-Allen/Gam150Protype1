@@ -62,7 +62,8 @@ private:
 	//------------------------------------------------------------------------------
 
 	Beta::GameObject* testObject;
-	Beta::SpriteSourcePtr spriteSource;
+	Beta::SpriteSourcePtr doorCueSprite;
+	Beta::SpriteSourcePtr playerSprite;
 };
 
 //----------------------------------------------------------------------------
