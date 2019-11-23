@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "HatSwap.h"
-#include "GameObjecs.h"
+#include "GameObjectsMaker.h"
 
 using namespace Beta;
 
