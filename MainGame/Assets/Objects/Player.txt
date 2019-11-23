@@ -1,0 +1,16 @@
+Player
+{
+	numComponents : 2
+	Transform
+	{
+		translation : { -1, 0 }
+		rotation : 0
+		scale : { 0.5, 0.8 }
+	}
+	Sprite
+	{
+		spriteSource : Player
+		color : { 1 , 1 , 1 , 1 }
+		zDepth : 0
+	}
+}

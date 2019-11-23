@@ -15,10 +15,13 @@
 
 #include "stdafx.h"
 #include "Level1.h"
+#include "GameObjectsMaker.h"
 
 //------------------------------------------------------------------------------
 
 using namespace Beta;
+using std::cout;
+using std::endl;
 
 //------------------------------------------------------------------------------
 // Public Functions:
@@ -26,13 +29,18 @@ using namespace Beta;
 
 // Creates an instance of Level 1.
 Level1::Level1()
-	: Level("Level 1"), testObject(nullptr)
+	: Level("Level 1"), player(nullptr), maskDisplay(nullptr), door(nullptr), number1(nullptr), number2(nullptr), number3(nullptr), enemy(nullptr), doorCue(nullptr)
 {
 }
 
 void Level1::Load()
 {
-	spriteSource = ResourceGetSpriteSource("Circle");
+	cout << "level 1::load" << endl;
+
+	//get graphics engine
+	GraphicsEngine& graphics = *EngineGetModule(GraphicsEngine);
+
+	graphics.SetBackgroundColor(Colors::Black);
 }
 
 // Initialize the memory associated with the Level1 game state.
@@ -40,23 +48,25 @@ void Level1::Initialize()
 {
 	std::cout << "Level1: Initialize" << std::endl;
 
-	// Create a new game object
-	testObject = new GameObject("TestObject");
+	player = Objects::CreatePlayer();
+	maskDisplay = Objects::CreateMaskDisplay();
+	door = Objects::CreateDoor();
+	number1 = Objects::CreateNumbers();
+	number1->GetComponent<Transform>()->SetTranslation(Vector2D(-1.3f, 0.6f));
+	number2 = Objects::CreateNumbers();
+	number2->GetComponent<Transform>()->SetTranslation(Vector2D(-1.03f, 0.6f));
+	number2->GetComponent<Sprite>()->SetFrame(1);
+	number3 = Objects::CreateNumbers();
+	number3->GetComponent<Transform>()->SetTranslation(Vector2D(-0.75f, 0.6f));
+	number3->GetComponent<Sprite>()->SetFrame(2);
 
-	// Create a transform component at 0,0 with scale 300,300
-	Transform* transform = new Transform(0.0f, 0.0f);
-	transform->SetRotation(0.0f);
-	transform->SetScale(Vector2D(2.0f, 2.0f));
-	testObject->AddComponent(transform);
 
-	// Create a sprite component and set its mesh and sprite source
-	Sprite* sprite = new Sprite();
-	sprite->SetSpriteSource(spriteSource);
-	sprite->SetColor(Colors::Green);
-	testObject->AddComponent(sprite);
-
-	// Add object to object manager
-	GetSpace()->GetObjectManager().AddObject(*testObject);
+	GetSpace()->GetObjectManager().AddObject(*player);
+	GetSpace()->GetObjectManager().AddObject(*maskDisplay);
+	GetSpace()->GetObjectManager().AddObject(*door);
+	GetSpace()->GetObjectManager().AddObject(*number1);
+	GetSpace()->GetObjectManager().AddObject(*number2);
+	GetSpace()->GetObjectManager().AddObject(*number3);
 }
 
 // Update the Level1 game state.
@@ -65,19 +75,6 @@ void Level1::Initialize()
 void Level1::Update(float dt)
 {
 	UNREFERENCED_PARAMETER(dt);
-
-	Input* input = EngineGetModule(Input);
-
-	// If the user presses the '1' key, restart the current level
-	if (input->CheckTriggered('1'))
-		GetSpace()->RestartLevel();
-
-	// If the user presses the 'D' key, delete the object
-	if (testObject != nullptr && input->CheckTriggered('D'))
-	{
-		testObject->Destroy();
-		testObject = nullptr;
-	}
 }
 
 // Shutdown any memory associated with the Level1 game state.

@@ -1,0 +1,16 @@
+MaskDisplay
+{
+	numComponents : 2
+	Transform
+	{
+		translation : { -1, 1 }
+		rotation : 0
+		scale : { 0.8, 0.5 }
+	}
+	Sprite
+	{
+		spriteSource : Masks
+		color : { 1 , 1 , 1 , 1 }
+		zDepth : 0
+	}
+}

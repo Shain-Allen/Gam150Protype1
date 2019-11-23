@@ -1,0 +1,16 @@
+Door
+{
+	numComponents : 2
+	Transform
+	{
+		translation : { 0, 0 }
+		rotation : 0
+		scale : { 0.2, 1 }
+	}
+	Sprite
+	{
+		spriteSource : Door
+		color : { 1 , 1 , 1 , 1 }
+		zDepth : 0
+	}
+}
