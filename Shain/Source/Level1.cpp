@@ -41,6 +41,8 @@ void Level1::Load()
 	GraphicsEngine& graphics = *EngineGetModule(GraphicsEngine);
 
 	graphics.SetBackgroundColor(Colors::Black);
+
+	enemy = Objects::CreateMonster();
 }
 
 // Initialize the memory associated with the Level1 game state.
@@ -60,6 +62,11 @@ void Level1::Initialize()
 	number3->GetComponent<Transform>()->SetTranslation(Vector2D(-0.75f, 0.6f));
 	number3->GetComponent<Sprite>()->SetFrame(2);
 
+	GameObject* monster = new GameObject(enemy);
+	monster->GetComponent<Transform>()->SetTranslation(Vector2D(1.0f, 0.0f));
+
+	doorCue = Objects::CreateDoorCue();
+	doorCue->GetComponent<Transform>()->SetTranslation(Vector2D(0.2f, 0.8f));
 
 	GetSpace()->GetObjectManager().AddObject(*player);
 	GetSpace()->GetObjectManager().AddObject(*maskDisplay);
@@ -67,6 +74,8 @@ void Level1::Initialize()
 	GetSpace()->GetObjectManager().AddObject(*number1);
 	GetSpace()->GetObjectManager().AddObject(*number2);
 	GetSpace()->GetObjectManager().AddObject(*number3);
+	GetSpace()->GetObjectManager().AddObject(*monster);
+	GetSpace()->GetObjectManager().AddObject(*doorCue);
 }
 
 // Update the Level1 game state.

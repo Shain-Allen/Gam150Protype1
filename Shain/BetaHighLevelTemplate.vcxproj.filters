@@ -25,6 +25,12 @@
     <ClCompile Include="Source\GameObjectsMaker.cpp">
       <Filter>Game\Components</Filter>
     </ClCompile>
+    <ClCompile Include="Source\DoorController.cpp">
+      <Filter>Game\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\HatSwap.cpp">
+      <Filter>Game\Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\stdafx.h">
@@ -34,6 +40,12 @@
       <Filter>Game\Levels</Filter>
     </ClInclude>
     <ClInclude Include="Source\GameObjectsMaker.h">
+      <Filter>Game\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DoorController.h">
+      <Filter>Game\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\HatSwap.h">
       <Filter>Game\Components</Filter>
     </ClInclude>
   </ItemGroup>
