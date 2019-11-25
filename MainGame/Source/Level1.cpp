@@ -1,9 +1,9 @@
 //------------------------------------------------------------------------------
 //
-// File Name: Level1.cpp
-// Author(s): Shain Allen
-// Project: Miscellaneous Files
-// Course: wanic GP2
+// File Name:	Level1.cpp
+// Author(s):	Jeremy Kings (j.kings)
+// Project:		BetaFramework
+// Course:		WANIC VGP2 2018-2019
 //
 // Copyright © 2018 DigiPen (USA) Corporation.
 //
@@ -63,7 +63,10 @@ void Level1::Initialize()
 	number3->GetComponent<Sprite>()->SetFrame(2);
 
 	GameObject* monster = new GameObject(enemy);
-	
+	monster->GetComponent<Transform>()->SetTranslation(Vector2D(1.0f, 0.0f));
+
+	doorCue = Objects::CreateDoorCue();
+	doorCue->GetComponent<Transform>()->SetTranslation(Vector2D(0.2f, 0.8f));
 
 	GetSpace()->GetObjectManager().AddObject(*player);
 	GetSpace()->GetObjectManager().AddObject(*maskDisplay);
@@ -71,6 +74,8 @@ void Level1::Initialize()
 	GetSpace()->GetObjectManager().AddObject(*number1);
 	GetSpace()->GetObjectManager().AddObject(*number2);
 	GetSpace()->GetObjectManager().AddObject(*number3);
+	GetSpace()->GetObjectManager().AddObject(*monster);
+	GetSpace()->GetObjectManager().AddObject(*doorCue);
 }
 
 // Update the Level1 game state.

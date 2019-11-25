@@ -2,7 +2,7 @@
 //
 // File Name: GameObjectsMaker.cpp
 // Author(s): Shain Allen
-// Project: Miscellaneous Files
+// Project: BetaHighLevelTemplate
 // Course: wanic GP2
 //
 // Copyright © 2018 DigiPen (USA) Corporation.
@@ -79,7 +79,7 @@ Beta::GameObject* Objects::CreateDoorCue()
 
 	Transform* transform = new Transform(0.5f, 0.5f);
 	transform->SetRotation(0.0f);
-	transform->SetScale(Vector2D(0.5f, 0.5f));
+	transform->SetScale(Vector2D(1.0f, 0.30f));
 	doorCue->AddComponent(transform);
 
 	Sprite* sprite = new Sprite;
@@ -115,7 +115,7 @@ Beta::Archetype Objects::CreateMonster()
 
 	Transform* transfrom = new Transform(0.0f, 0.0f);
 	transfrom->SetRotation(0.0f);
-	transfrom->SetScale(Vector2D(0.5f, 0.5f));
+	transfrom->SetScale(Vector2D(0.5f, 0.8f));
 	Monster->AddComponent(transfrom);
 
 	Sprite* sprite = new Sprite;

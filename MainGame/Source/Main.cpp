@@ -1,9 +1,9 @@
 //------------------------------------------------------------------------------
 //
-// File Name: Main.cpp
-// Author(s): Shain Allen
-// Project: Miscellaneous Files
-// Course: wanic GP2
+// File Name:	Main.cpp
+// Author(s):	Jeremy Kings (j.kings)
+// Project:		BetaFramework
+// Course:		WANIC VGP2 2018-2019
 //
 // Copyright © 2018 DigiPen (USA) Corporation.
 //
