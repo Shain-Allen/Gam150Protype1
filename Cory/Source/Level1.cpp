@@ -54,9 +54,15 @@ void Level1::Initialize()
 
 	GameObject* monster = new GameObject(ResourceGetArchetype("Monster"));
 
-	GetSpace()->GetObjectManager().AddObject(*monster));
+	GetSpace()->GetObjectManager().AddObject(*monster);
 
 	monster->GetComponent<Sprite>()->SetFrame(door->GetComponent<DoorController>()->MaskReq);
+
+	GameObject* doorcue = CreateDoorCue();
+
+	GetSpace()->GetObjectManager().AddObject(*doorcue);
+
+	doorcue->GetComponent<Sprite>()->SetAlpha(0);
 	// Create a new game object
 	/*
 	testObject = new GameObject("TestObject");

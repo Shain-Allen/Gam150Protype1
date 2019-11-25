@@ -77,9 +77,9 @@ Beta::GameObject* OBJECTS::CreateDoorCue()
 {
 	GameObject* doorCue = new GameObject("DoorCue");
 
-	Transform* transform = new Transform(0.5f, 0.5f);
+	Transform* transform = new Transform(0.2f, 1.0f);
 	transform->SetRotation(0.0f);
-	transform->SetScale(Vector2D(0.5f, 0.0f));
+	transform->SetScale(Vector2D(1.0f, 0.5f));
 	doorCue->AddComponent(transform);
 
 	Sprite* sprite = new Sprite;
