@@ -1,9 +1,9 @@
 //------------------------------------------------------------------------------
 //
-// File Name:	Level1.cpp
-// Author(s):	Jeremy Kings (j.kings)
-// Project:		BetaFramework
-// Course:		WANIC VGP2 2018-2019
+// File Name: Level1.cpp
+// Author(s): Shain Allen
+// Project: Miscellaneous Files
+// Course: wanic GP2
 //
 // Copyright © 2018 DigiPen (USA) Corporation.
 //
@@ -41,6 +41,8 @@ void Level1::Load()
 	GraphicsEngine& graphics = *EngineGetModule(GraphicsEngine);
 
 	graphics.SetBackgroundColor(Colors::Black);
+
+	enemy = Objects::CreateMonster();
 }
 
 // Initialize the memory associated with the Level1 game state.
@@ -60,6 +62,8 @@ void Level1::Initialize()
 	number3->GetComponent<Transform>()->SetTranslation(Vector2D(-0.75f, 0.6f));
 	number3->GetComponent<Sprite>()->SetFrame(2);
 
+	GameObject* monster = new GameObject(enemy);
+	
 
 	GetSpace()->GetObjectManager().AddObject(*player);
 	GetSpace()->GetObjectManager().AddObject(*maskDisplay);

@@ -2,7 +2,7 @@
 //
 // File Name: GameObjectsMaker.cpp
 // Author(s): Shain Allen
-// Project: BetaHighLevelTemplate
+// Project: Miscellaneous Files
 // Course: wanic GP2
 //
 // Copyright © 2018 DigiPen (USA) Corporation.

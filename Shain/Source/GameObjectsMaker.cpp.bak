@@ -10,8 +10,6 @@
 //------------------------------------------------------------------------------
 #include "stdafx.h"
 #include "GameObjectsMaker.h"
-#include "DoorController.h"
-#include "HatSwap.h"
 
 using namespace Beta;
 
@@ -27,7 +25,6 @@ Beta::GameObject* Objects::CreatePlayer()
 	Sprite* sprite = new Sprite;
 	sprite->SetSpriteSource(ResourceGetSpriteSource("Player"));
 	player->AddComponent(sprite);
-	player->AddComponent(new HatSwap);
 
 	EngineGetModule(GameObjectFactory)->SaveObjectToFile(player);
 
@@ -64,9 +61,6 @@ Beta::GameObject* Objects::CreateDoor()
 	Sprite* sprite = new Sprite;
 	sprite->SetSpriteSource(ResourceGetSpriteSource("Door"));
 	door->AddComponent(sprite);
-	
-	DoorController* doorController = new DoorController;
-	door->AddComponent(doorController);
 
 	EngineGetModule(GameObjectFactory)->SaveObjectToFile(door);
 
@@ -79,7 +73,7 @@ Beta::GameObject* Objects::CreateDoorCue()
 
 	Transform* transform = new Transform(0.5f, 0.5f);
 	transform->SetRotation(0.0f);
-	transform->SetScale(Vector2D(1.0f, 0.30f));
+	transform->SetScale(Vector2D(0.5f, 0.5f));
 	doorCue->AddComponent(transform);
 
 	Sprite* sprite = new Sprite;
@@ -115,7 +109,7 @@ Beta::Archetype Objects::CreateMonster()
 
 	Transform* transfrom = new Transform(0.0f, 0.0f);
 	transfrom->SetRotation(0.0f);
-	transfrom->SetScale(Vector2D(0.5f, 0.8f));
+	transfrom->SetScale(Vector2D(0.5f, 0.5f));
 	Monster->AddComponent(transfrom);
 
 	Sprite* sprite = new Sprite;

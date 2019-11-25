@@ -1,13 +1,14 @@
 //------------------------------------------------------------------------------
 //
-// File Name: DoorController.cpp
-// Author(s): Shain Allen
-// Project: Miscellaneous Files
-// Course: wanic GP2
+// File Name:	DoorController.cpp
+// Author(s):	Cory Carlson
+// Project:		BetaFramework
+// Course:		WANIC VGP2 2018-2019
 //
 // Copyright © 2018 DigiPen (USA) Corporation.
 //
 //------------------------------------------------------------------------------
+
 #include "stdafx.h"
 #include "DoorController.h"
 #include "HatSwap.h"

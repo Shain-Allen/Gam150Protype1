@@ -1,19 +1,16 @@
-Door
+Monster
 {
-	numComponents : 3
+	numComponents : 2
 	Transform
 	{
 		translation : { 0, 0 }
 		rotation : 0
-		scale : { 0.2, 1 }
+		scale : { 0.5, 0.8 }
 	}
 	Sprite
 	{
-		spriteSource : Door
+		spriteSource : Monsters
 		color : { 1 , 1 , 1 , 1 }
 		zDepth : 0
-	}
-	DoorController
-	{
 	}
 }

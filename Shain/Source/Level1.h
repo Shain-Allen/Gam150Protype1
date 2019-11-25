@@ -70,7 +70,7 @@ private:
 	Beta::GameObject* number1;
 	Beta::GameObject* number2;
 	Beta::GameObject* number3;
-	Beta::GameObject* enemy;
+	Beta::Archetype enemy;
 	Beta::GameObject* doorCue;
 };
 

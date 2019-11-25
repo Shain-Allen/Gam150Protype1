@@ -1,6 +1,6 @@
 Player
 {
-	numComponents : 2
+	numComponents : 3
 	Transform
 	{
 		translation : { -1, 0 }
@@ -12,5 +12,8 @@ Player
 		spriteSource : Player
 		color : { 1 , 1 , 1 , 1 }
 		zDepth : 0
+	}
+	HatSwap
+	{
 	}
 }
